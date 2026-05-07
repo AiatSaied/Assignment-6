@@ -1,0 +1,22 @@
+@media (min-width: 48rem) {
+  .hero {
+    background-attachment: fixed;
+  }
+}
+
+@media (min-width: 48rem) {
+  .hero .container {
+    padding-block: 48px;
+  }
+}
+
+@media (min-width: 40rem) {
+  .hero .container {
+    padding-inline: 16px;
+  }
+}
+@media (min-width: 64rem) {
+  .hero-content {
+    text-align: left;
+  }
+}
