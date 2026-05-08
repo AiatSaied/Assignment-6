@@ -466,6 +466,10 @@ ul {
   -moz-transition: 0.4s;
   -ms-transition: 0.4s;
   -o-transition: 0.4s;
+  -webkit-transform: translateY(20px);
+  -moz-transform: translateY(20px);
+  -ms-transform: translateY(20px);
+  -o-transform: translateY(20px);
 }
 .latest-games .game-card:hover .game-overlay .image-content,
 .latest-games .game-card:hover .game-overlay .image-name {
@@ -960,42 +964,17 @@ ul {
 .contact-us .contact-info .left-info .form-control::placeholder {
   color: #d1d5dca9;
 }
-.contact-us .contact-info .left-info .form-check-input {
+.contact-us .contact-info .left-info .check-input {
   width: 20px;
   height: 20px;
-  margin-top: 0;
-  margin-right: 12px;
-  border-color: #4a5565;
-  border-radius: 2px;
-  -webkit-border-radius: 2px;
-  -moz-border-radius: 2px;
-  -ms-border-radius: 2px;
-  -o-border-radius: 2px;
 }
-/* .contact-us .contact-info .left-info .form-check-input:checked {
-  box-shadow: 2px #cbfe1c !important;
-  border-color: var(--main-yellow);
-} */
-.contact-us .contact-info .left-info .form-check-input:focus {
+.contact-us .contact-info .left-info .check-input:focus {
   box-shadow: 0 0 0 2px #cbfe1c;
 }
-.contact-us .contact-info .left-info .form-check-input:checked {
+.contact-us .contact-info .left-info .check-input:checked {
+  outline: 3px solid var(--main-yellow);
 }
-/* 
-.contact-us .contact-info .left-info .form-check-input:focus {
-  box-shadow: 0 0 0 calc(2px + 0) #cbfe1c;
-  border-color: var(--main-yellow);
-  border-width: 2px;
-}
-.contact-us .contact-info .left-info .form-check-input:focus {
-  border-color: var(--main-yellow);
-  box-shadow: 0 0 0 2px #cbfe1c40;
-}
-.contact-us .contact-info .left-info .form-check-input:checked {
-  background-color: #364153;
-  border: 2px solid var(--main-yellow);
-} */
-.contact-us .contact-info .left-info .form-check-label {
+.contact-us .contact-info .left-info .check-label {
   font-size: 14px;
   color: #99a1af;
 }
@@ -1023,16 +1002,18 @@ footer {
   color: #f1f1f1;
   background-color: #000;
 }
-footer .footer-content {
+/* footer .footer-content {
   gap: 32px;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-}
+} */
 footer .footer-content .about p,
 footer .footer-content .about .social-links a,
 footer .footer-content .items ul,
 footer .copyright p,
 footer .copyright .links {
   color: #99a1af;
+}
+footer .footer-content .about p {
+  width: 80%;
 }
 footer .footer-content .about .social-links a:hover {
   color: var(--main-yellow);
