@@ -813,7 +813,6 @@ ul {
   top: 0;
   left: 0;
   right: 0;
-  /* background: inherit; */
   backdrop-filter: grayscale() brightness(0.9);
   z-index: 1;
   transition: 0.8s;
@@ -1002,9 +1001,6 @@ footer {
   color: #f1f1f1;
   background-color: #000;
 }
-/* footer .footer-content {
-  gap: 32px;
-} */
 footer .footer-content .about p,
 footer .footer-content .about .social-links a,
 footer .footer-content .items ul,
