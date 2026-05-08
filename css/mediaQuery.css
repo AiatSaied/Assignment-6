@@ -20,3 +20,9 @@
     text-align: left;
   }
 }
+
+/* html,
+body {
+  overflow-x: hidden;
+  width: 100%;
+} */

@@ -20,7 +20,6 @@ body {
   font-size: 16px;
   line-height: 1.2;
   color: #f1f1f1;
-  /* font-weight: 600; */
   background-color: #0b0e13;
   height: 500vh;
 }
@@ -42,24 +41,19 @@ ul {
   background-color: var(--main-yellow);
   color: var(--main-dark);
 }
-/* button {
-  font-family: inherit;
-  border: none;
-  background-color: inherit;
-} */
-
 /* Navbar Section */
 .navbar {
   background-color: var(--main-dark);
   border-bottom: var(--main-border);
   z-index: 50;
 }
-.container {
+.section-container {
   width: 84%;
+  max-width: 1280px;
 }
-@media (max-width: 992px) {
-  .container {
-    width: 95%;
+@media (max-width: 1300px) {
+  .section-container {
+    width: 100%;
   }
 }
 .navbar-brand,
@@ -79,7 +73,9 @@ ul {
 }
 .navbar-nav .nav-link:hover,
 .notification i:hover,
-.message i:hover {
+.message i:hover,
+.notification span:hover,
+.message span:hover {
   color: var(--main-yellow) !important;
 }
 .navbar-brand:focus,
@@ -109,6 +105,7 @@ ul {
   color: #0b0e13;
 }
 .btn-outline-success:hover {
+  color: #0b0e13;
   background-color: var(--main-yellow-hover);
 }
 .btn-outline-success:before {
@@ -139,10 +136,16 @@ ul {
 .navbar .navbar-toggler i:hover {
   color: var(--main-yellow);
 }
+@media screen and (max-width: 992px) {
+  .navbar-nav {
+    border-bottom: var(--main-border);
+    border-top: var(--main-border);
+  }
+}
 /* Hero Section */
 .hero {
   background-image:
-    linear-gradient(#000000e0, #000000e0), url(/Images/hero-bg-H6PoyNYD.jpg);
+    linear-gradient(#000000e0, #000000e0), url(../Images/hero-bg-H6PoyNYD.jpg);
   background-size: cover;
   background-position: 50%;
   background-attachment: fixed;
@@ -150,13 +153,14 @@ ul {
   padding-top: 120px;
   padding-bottom: 64px;
 }
-.hero .container {
+.hero .section-container {
   width: 82%;
   z-index: 10;
+  max-width: 1280px;
 }
-@media (max-width: 992px) {
-  .hero .container {
-    width: 95%;
+@media (max-width: 1300px) {
+  .hero .section-container {
+    width: 98%;
   }
 }
 .hero .hero-content,
@@ -257,7 +261,55 @@ ul {
 .hero-image .hero-badge .badge-content p:last-child {
   line-height: 1.4;
 }
-
+@media screen and (max-width: 992px) {
+  .hero .hero-content,
+  .hero .hero-image {
+    width: 75%;
+  }
+  .hero .hero-content {
+    text-align: center !important;
+  }
+  .hero .hero-buttons {
+    justify-content: center !important;
+  }
+  .hero .hero-content h1 {
+    font-size: 45px;
+  }
+  .hero-content .hero-buttons button {
+    font-size: 14px;
+  }
+  .hero .hero-content p {
+    margin-inline: auto;
+  }
+}
+@media screen and (max-width: 768px) {
+  .hero {
+    padding-top: 160px;
+    padding-bottom: 140px;
+  }
+  .hero-content .hero-buttons button {
+    width: 100%;
+  }
+  .hero-image img {
+    height: 300px;
+  }
+}
+@media screen and (max-width: 700px) {
+  .hero {
+    padding-top: 200px;
+    padding-bottom: 170px;
+  }
+  .hero .hero-content,
+  .hero .hero-image {
+    width: 85%;
+  }
+  .hero .hero-content h1 {
+    font-size: 38px;
+  }
+  .hero-image img {
+    height: 230px;
+  }
+}
 /* Style of Header-title for main sections */
 .section-header {
   margin-bottom: 64px;
@@ -305,6 +357,42 @@ ul {
 }
 .section-header .section-subtitle {
   color: #99a1af;
+}
+@media screen and (max-width: 992px) {
+  .section-header h2 {
+    font-size: 40px;
+  }
+  .what-we-do .section-header .do-subtitle {
+    font-size: 40px;
+  }
+  .our-team .section-header h2,
+  .contact-us .section-header h2 {
+    font-size: 44px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .section-header h2 {
+    font-size: 32px;
+  }
+  .what-we-do .section-header .do-subtitle {
+    font-size: 32px;
+  }
+  .our-team .section-header h2,
+  .contact-us .section-header h2 {
+    font-size: 44px;
+  }
+}
+@media screen and (max-width: 600px) {
+  .section-header h2 {
+    font-size: 25px;
+  }
+  .what-we-do .section-header .do-subtitle {
+    font-size: 25px;
+  }
+  .our-team .section-header h2,
+  .contact-us .section-header h2 {
+    font-size: 40px;
+  }
 }
 /* Latest Games Section */
 .latest-games,
@@ -460,10 +548,6 @@ ul {
 .what-we-do .do-subtitle span {
   color: var(--main-yellow);
 }
-.what-we-do .do-content {
-  gap: 24px;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-}
 .what-we-do .do-content .do-card {
   background-color: #1a1a1a;
   border: var(--main-border);
@@ -545,6 +629,20 @@ ul {
   -ms-transition: 0.3s;
   -o-transition: 0.3s;
 }
+@media screen and (max-width: 768px) {
+  .what-we-do .do-content .do-card .do-icon {
+    width: 45px;
+    height: 45px;
+    border-radius: 8px !important;
+    -webkit-border-radius: 8px !important;
+    -moz-border-radius: 8px !important;
+    -ms-border-radius: 8px !important;
+    -o-border-radius: 8px !important;
+  }
+  .what-we-do .do-content .do-card .do-icon i {
+    font-size: 18px !important;
+  }
+}
 .what-we-do .do-content .do-card:hover .do-icon {
   background-color: var(--main-yellow);
 }
@@ -555,6 +653,11 @@ ul {
   font-family:
     Days One,
     sans-serif;
+}
+@media (max-width: 768px) {
+  .what-we-do .do-content .do-card h3 {
+    font-size: 16px !important;
+  }
 }
 .what-we-do::after {
   content: "";
@@ -686,13 +789,15 @@ ul {
 
 /* Our Team Section */
 .our-team .team-members {
-  gap: 32px;
   cursor: pointer;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+@media (min-width: 992px) and (max-width: 1200px) {
+  .team-members .team-card .team-details h3 {
+    font-size: 18px !important;
+  }
 }
 .our-team .team-members .team-card {
   background-color: #101828;
-  /* height: 100%; */
 }
 .our-team .team-members .team-card .team-image {
   height: 320px;
@@ -741,7 +846,6 @@ ul {
     Days One,
     sans-serif;
   line-height: 1.4;
-  font-size: 20px;
 }
 .team-members .team-card .team-details p:first-of-type {
   font-size: 14px;
@@ -768,9 +872,6 @@ ul {
 .contact-us {
   padding-block: 96px;
   background-image: linear-gradient(to bottom right in oklab, #101828, #0b0e13);
-}
-.contact-us .contact-info {
-  grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 .contact-us .contact-info .info-box {
   background-color: #1e2939;
@@ -836,51 +937,71 @@ ul {
   font-size: 14px;
 }
 .contact-us .contact-info .left-info .form-control,
-.contact-us .contact-info .left-info .form-select,
+.contact-us .contact-info .left-info .select-form,
 .contact-us .contact-info .left-info textarea {
   color: #f1f1f1;
   background-color: #364153;
   border: 1px solid #4a5565;
   padding: 12px 16px;
 }
+.contact-us .contact-info .left-info .select-form {
+  background-position: right 1px center;
+}
 .contact-us .contact-info .left-info textarea {
   resize: none;
 }
 .contact-us .contact-info .left-info .form-control:focus,
-.contact-us .contact-info .left-info .form-select:focus {
+.contact-us .contact-info .left-info .select-form:focus {
   outline: none;
   border-color: var(--main-yellow);
   border-width: 2px;
-  box-shadow: 0 0 0 calc(2px + 0) var(--main-yellow);
+  box-shadow: 0 0 0 1px #cbfe1c;
 }
 .contact-us .contact-info .left-info .form-control::placeholder {
   color: #d1d5dca9;
 }
-
 .contact-us .contact-info .left-info .form-check-input {
-  color: var(--main-yellow);
-  background-color: #364153;
-  border-color: #4a5565;
   width: 20px;
   height: 20px;
+  margin-top: 0;
   margin-right: 12px;
+  border-color: #4a5565;
   border-radius: 2px;
   -webkit-border-radius: 2px;
   -moz-border-radius: 2px;
   -ms-border-radius: 2px;
   -o-border-radius: 2px;
 }
+/* .contact-us .contact-info .left-info .form-check-input:checked {
+  box-shadow: 2px #cbfe1c !important;
+  border-color: var(--main-yellow);
+} */
 .contact-us .contact-info .left-info .form-check-input:focus {
-  box-shadow: 0 0 0 calc(2px + 0) var(--main-yellow);
+  box-shadow: 0 0 0 2px #cbfe1c;
+}
+.contact-us .contact-info .left-info .form-check-input:checked {
+}
+/* 
+.contact-us .contact-info .left-info .form-check-input:focus {
+  box-shadow: 0 0 0 calc(2px + 0) #cbfe1c;
   border-color: var(--main-yellow);
   border-width: 2px;
 }
+.contact-us .contact-info .left-info .form-check-input:focus {
+  border-color: var(--main-yellow);
+  box-shadow: 0 0 0 2px #cbfe1c40;
+}
+.contact-us .contact-info .left-info .form-check-input:checked {
+  background-color: #364153;
+  border: 2px solid var(--main-yellow);
+} */
 .contact-us .contact-info .left-info .form-check-label {
   font-size: 14px;
   color: #99a1af;
 }
 .contact-us .contact-info .left-info button {
   font-size: 18px;
+  margin-top: 0;
 }
 .contact-us .contact-info .left-info .info-bottom {
   padding-top: 32px;
